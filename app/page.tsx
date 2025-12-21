@@ -4,10 +4,9 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { 
   Github, Linkedin, Mail, ArrowUpRight, Smartphone, Database, Globe, 
-  MapPin, Phone, BookOpen, Award, Code2, Layers, Briefcase, Wrench, Send, FileText, Menu, X, Sun, Moon
+  MapPin, Phone, BookOpen, Award, Code2, Layers, Briefcase, Wrench, Send, FileText, Menu, X, Sun, Moon ,
 } from "lucide-react";
 
-// Definisi Tipe Data
 type Particle = {
   id: number;
   left: number;
@@ -307,7 +306,7 @@ export default function Home() {
                 
                 {/* ROLE:*/}
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-                  <span className="bg-linear-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Fullstack & Mobile Developer.</span>
+                  <span className="bg-linear-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Mobile & Fullstack Developer.</span>
                 </h2>
               </div>
 
@@ -331,8 +330,8 @@ export default function Home() {
                  <a href="#projects" className="px-8 py-4 bg-linear-to-r from-teal-400 to-cyan-400 text-white rounded-lg hover:shadow-2xl hover:shadow-teal-400/50 transition-all duration-300 font-bold tracking-wide flex items-center gap-2 group hover:scale-105">
                   View Projects <ArrowUpRight className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"/>
                  </a>
-                 <a href="/experience.pdf" target="_blank" className={`px-8 py-4 border-2 ${isDarkMode ? 'border-slate-400 text-slate-300' : 'border-slate-500 text-slate-600'} rounded-lg hover:border-teal-400 hover:text-teal-400 hover:bg-teal-400/5 transition-all duration-300 font-bold tracking-wide flex items-center gap-2 hover:scale-105`}>
-                  Download CV <FileText size={20} />
+                 <a href="https://drive.google.com/file/d/1xG7etTn4P8I_4_r6kL8QN0zPkJVudq4l/view?usp=drive_link" target="_blank" className={`px-8 py-4 border-2 ${isDarkMode ? 'border-slate-400 text-slate-300' : 'border-slate-500 text-slate-600'} rounded-lg hover:border-teal-400 hover:text-teal-400 hover:bg-teal-400/5 transition-all duration-300 font-bold tracking-wide flex items-center gap-2 hover:scale-105`}>
+                  My Resume <FileText size={20} />
                  </a>
                  <div className={`flex gap-5 ${themeClasses.textSecondary} ml-2`}>
                     <a href="https://github.com/GigaFdlh" target="_blank" className="hover:text-teal-400 transition-all duration-300 hover:-translate-y-1 hover:scale-110"><Github size={26}/></a>
@@ -623,14 +622,16 @@ export default function Home() {
         <p className="hover:text-teal-400 transition-colors duration-300 cursor-default mb-2">
           Designed & Built by <span className="text-teal-400 font-bold">Giga Kurnia Fadhillah</span>
         </p>
-        <p className="text-xs">Sekeloa, Kec.Coblong, Kota Bandung</p>
+        <div className={`flex items-center justify-center gap-2 text-xs ${themeClasses.textSecondary}`}>
+              <MapPin size={14} className="text-teal-400"/>
+              <span>Kota Bandung, Jawa Barat, Indonesia</span>
+        </div>
         <div className="flex justify-center gap-6 mt-4">
           <a href="https://github.com/GigaFdlh" target="_blank" className={`${isDarkMode ? 'text-slate-500' : 'text-slate-400'} hover:text-teal-400 transition-all duration-300 hover:-translate-y-1`}><Github size={20} /></a>
           <a href="https://linkedin.com/in/gigafadhillah" target="_blank" className={`${isDarkMode ? 'text-slate-500' : 'text-slate-400'} hover:text-teal-400 transition-all duration-300 hover:-translate-y-1`}><Linkedin size={20} /></a>
           <a href="mailto:gigakurnia81@gmail.com" className={`${isDarkMode ? 'text-slate-500' : 'text-slate-400'} hover:text-teal-400 transition-all duration-300 hover:-translate-y-1`}><Mail size={20} /></a>
         </div>
       </footer>
-
     </div>
   );
 }
