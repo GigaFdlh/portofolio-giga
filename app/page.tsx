@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { 
-  Github, Linkedin, Mail, ArrowUpRight, Smartphone, Database, Globe, 
-  MapPin, Phone, BookOpen, Award, Code2, Layers, Briefcase, Wrench, Send, FileText, Menu, X, Sun, Moon ,
+  Github, Linkedin, Mail, ArrowUpRight, ShoppingCart, Database, Globe, 
+  MapPin, Phone, BookOpen, Award, Code2, Layers, Briefcase, Wrench, Send, FileText, Menu, X, Sun, Moon , BarChart2 ,
 } from "lucide-react";
 
 type Particle = {
@@ -404,12 +404,74 @@ export default function Home() {
              <h2 className={`text-3xl md:text-4xl font-bold bg-linear-to-r ${isDarkMode ? 'from-slate-100 to-teal-400' : 'from-slate-700 to-teal-500'} bg-clip-text text-transparent`}>My Projects</h2>
              <div className="h-0.5 bg-linear-to-r from-teal-400 to-transparent flex-1 ml-4"></div>
           </div>
+          
           <div className="space-y-32">
+            
+            {/* PROJECT 1 */}
             <div className={`grid md:grid-cols-12 gap-8 items-center group transition-all duration-700 ${visibleSections.has('projects') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+               <a 
+                 href="https://github.com/GigaFdlh/TapNota-app" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className={`md:col-span-7 h-80 bg-linear-to-br ${isDarkMode ? 'from-slate-800 to-slate-900' : 'from-slate-200/80 to-slate-300/60'} rounded-xl border ${themeClasses.cardBorder} flex items-center justify-center relative overflow-hidden shadow-2xl group-hover:shadow-teal-400/30 transition-all duration-500 cursor-pointer`}
+               >
+                 <div className="absolute inset-0 bg-linear-to-br from-teal-400/10 to-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <div className={`absolute inset-0 ${isDarkMode ? 'bg-[#0a192f]/40' : 'bg-slate-100/40'} group-hover:bg-transparent transition-colors duration-500`}></div>
+                 <ShoppingCart size={64} className={`${isDarkMode ? 'text-slate-600' : 'text-slate-400'} group-hover:text-teal-400 transition-all duration-500 transform group-hover:scale-125 group-hover:-rotate-12`} />
+                 <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-teal-400 text-xs font-mono">
+                    View on GitHub ↗
+                 </div>
+               </a>
+               
+               <div className="md:col-span-5 md:text-right">
+                 <p className="text-teal-400 font-mono text-sm mb-2">Mobile Application</p>
+                 <h3 className={`text-2xl font-bold mb-4 ${themeClasses.textPrimary} group-hover:text-teal-400 transition-colors duration-300`}>TapNota - Modern POS</h3>
+                 <div className={`bg-linear-to-br ${themeClasses.cardBg} p-6 rounded-lg shadow-xl ${themeClasses.textSecondary} text-sm leading-relaxed mb-6 text-left md:text-right ${isDarkMode ? 'hover:shadow-2xl hover:shadow-teal-400/20' : 'hover:shadow-xl hover:shadow-teal-400/30'} transition-all duration-500 border ${themeClasses.cardBorder} hover:border-teal-400/50 hover:-translate-y-1`}>
+                   A beautiful, fully offline Point of Sale (POS) application designed for UMKM. Features a cashier system, product management, real-time analytics, and transaction history without internet dependency.
+                 </div>
+                 <ul className={`flex flex-wrap gap-3 justify-start md:justify-end ${themeClasses.textSecondary} font-mono text-xs mb-6`}>
+                   {['Flutter', 'Provider', 'SharedPrefs', 'UI/UX'].map((tech) => (
+                     <li key={tech} className={`px-3 py-1 ${isDarkMode ? 'bg-teal-400/10' : 'bg-teal-50'} rounded-full border border-teal-400/30 hover:bg-teal-400/20 hover:scale-110 transition-all duration-300`}>{tech}</li>
+                   ))}
+                 </ul>
+               </div>
+            </div>
+
+            {/* PROJECT 2 */}
+            <div className={`grid md:grid-cols-12 gap-8 items-center group transition-all duration-700 delay-200 ${visibleSections.has('projects') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+               <div className="md:col-span-5 order-2 md:order-1">
+                 <p className="text-teal-400 font-mono text-sm mb-2">Educational App</p>
+                 <h3 className={`text-2xl font-bold mb-4 ${themeClasses.textPrimary} group-hover:text-teal-400 transition-colors duration-300`}>SortVizu - Algo Visualizer</h3>
+                 <div className={`bg-linear-to-br ${themeClasses.cardBg} p-6 rounded-lg shadow-xl ${themeClasses.textSecondary} text-sm leading-relaxed mb-6 ${isDarkMode ? 'hover:shadow-2xl hover:shadow-teal-400/20' : 'hover:shadow-xl hover:shadow-teal-400/30'} transition-all duration-500 border ${themeClasses.cardBorder} hover:border-teal-400/50 hover:-translate-y-1`}>
+                   Interactive sorting algorithm visualizer with &quot;Professional but Fun&quot; design. Includes comparison mode, gamification achievements, dynamic sound effects, and clean architecture implementation.
+                 </div>
+                 <ul className={`flex flex-wrap gap-3 ${themeClasses.textSecondary} font-mono text-xs mb-6`}>
+                   {['Flutter', 'Clean Arch', 'Algorithms', 'AudioPlayers'].map((tech) => (
+                     <li key={tech} className={`px-3 py-1 ${isDarkMode ? 'bg-teal-400/10' : 'bg-teal-50'} rounded-full border border-teal-400/30 hover:bg-teal-400/20 hover:scale-110 transition-all duration-300`}>{tech}</li>
+                   ))}
+                 </ul>
+               </div>
+               <a 
+                 href="https://github.com/GigaFdlh/SortVizu-app" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className={`md:col-span-7 h-80 bg-linear-to-br ${isDarkMode ? 'from-slate-800 to-slate-900' : 'from-slate-200/80 to-slate-300/60'} rounded-xl border ${themeClasses.cardBorder} flex items-center justify-center relative overflow-hidden shadow-2xl order-1 md:order-2 group-hover:shadow-teal-400/30 transition-all duration-500 cursor-pointer`}
+               >
+                  <div className="absolute inset-0 bg-linear-to-br from-teal-400/10 to-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className={`absolute inset-0 ${isDarkMode ? 'bg-[#0a192f]/40' : 'bg-slate-100/40'} group-hover:bg-transparent transition-colors duration-500`}></div>
+                  <BarChart2 size={64} className={`${isDarkMode ? 'text-slate-600' : 'text-slate-400'} group-hover:text-teal-400 transition-all duration-500 transform group-hover:scale-125 group-hover:rotate-12`} />
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-teal-400 text-xs font-mono">
+                    View on GitHub ↗
+                 </div>
+               </a>
+            </div>
+
+            {/* PROJECT 3 */}
+            <div className={`grid md:grid-cols-12 gap-8 items-center group transition-all duration-700 delay-300 ${visibleSections.has('projects') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                <div className={`md:col-span-7 h-80 bg-linear-to-br ${isDarkMode ? 'from-slate-800 to-slate-900' : 'from-slate-200/80 to-slate-300/60'} rounded-xl border ${themeClasses.cardBorder} flex items-center justify-center relative overflow-hidden shadow-2xl group-hover:shadow-teal-400/30 transition-all duration-500`}>
                  <div className="absolute inset-0 bg-linear-to-br from-teal-400/10 to-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                  <div className={`absolute inset-0 ${isDarkMode ? 'bg-[#0a192f]/40' : 'bg-slate-100/40'} group-hover:bg-transparent transition-colors duration-500`}></div>
-                 <Layers size={64} className={`${isDarkMode ? 'text-slate-600' : 'text-slate-400'} group-hover:text-teal-400 transition-all duration-500 transform group-hover:scale-125 group-hover:rotate-12`} />
+                 <Layers size={64} className={`${isDarkMode ? 'text-slate-600' : 'text-slate-400'} group-hover:text-teal-400 transition-all duration-500 transform group-hover:scale-125 group-hover:-rotate-12`} />
                </div>
                <div className="md:col-span-5 md:text-right">
                  <p className="text-teal-400 font-mono text-sm mb-2">Web Development</p>
@@ -422,25 +484,6 @@ export default function Home() {
                      <li key={tech} className={`px-3 py-1 ${isDarkMode ? 'bg-teal-400/10' : 'bg-teal-50'} rounded-full border border-teal-400/30 hover:bg-teal-400/20 hover:scale-110 transition-all duration-300`}>{tech}</li>
                    ))}
                  </ul>
-               </div>
-            </div>
-             <div className={`grid md:grid-cols-12 gap-8 items-center group transition-all duration-700 delay-200 ${visibleSections.has('projects') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-               <div className="md:col-span-5 order-2 md:order-1">
-                 <p className="text-teal-400 font-mono text-sm mb-2">Mobile Development</p>
-                 <h3 className={`text-2xl font-bold mb-4 ${themeClasses.textPrimary} group-hover:text-teal-400 transition-colors duration-300`}>Mobile Apps Project</h3>
-                 <div className={`bg-linear-to-br ${themeClasses.cardBg} p-6 rounded-lg shadow-xl ${themeClasses.textSecondary} text-sm leading-relaxed mb-6 ${isDarkMode ? 'hover:shadow-2xl hover:shadow-teal-400/20' : 'hover:shadow-xl hover:shadow-teal-400/30'} transition-all duration-500 border ${themeClasses.cardBorder} hover:border-teal-400/50 hover:-translate-y-1`}>
-                   A mobile application developed using Flutter. Focused on efficient state management and seamless API integration.
-                 </div>
-                 <ul className={`flex flex-wrap gap-3 ${themeClasses.textSecondary} font-mono text-xs mb-6`}>
-                   {['Flutter', 'Dart', 'API Integration'].map((tech) => (
-                     <li key={tech} className={`px-3 py-1 ${isDarkMode ? 'bg-teal-400/10' : 'bg-teal-50'} rounded-full border border-teal-400/30 hover:bg-teal-400/20 hover:scale-110 transition-all duration-300`}>{tech}</li>
-                   ))}
-                 </ul>
-               </div>
-               <div className={`md:col-span-7 h-80 bg-linear-to-br ${isDarkMode ? 'from-slate-800 to-slate-900' : 'from-slate-200/80 to-slate-300/60'} rounded-xl border ${themeClasses.cardBorder} flex items-center justify-center relative overflow-hidden shadow-2xl order-1 md:order-2 group-hover:shadow-teal-400/30 transition-all duration-500`}>
-                  <div className="absolute inset-0 bg-linear-to-br from-teal-400/10 to-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className={`absolute inset-0 ${isDarkMode ? 'bg-[#0a192f]/40' : 'bg-slate-100/40'} group-hover:bg-transparent transition-colors duration-500`}></div>
-                  <Smartphone size={64} className={`${isDarkMode ? 'text-slate-600' : 'text-slate-400'} group-hover:text-teal-400 transition-all duration-500 transform group-hover:scale-125 group-hover:-rotate-12`} />
                </div>
             </div>
           </div>
